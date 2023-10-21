@@ -1,0 +1,103 @@
+textarea {
+    /* Tamaño uniforme del campo de texto */
+    width: 300px;
+    box-sizing: border-box;
+    /* Hacer coincidir los bordes del campo del formulario */
+    border: 1px solid #999;
+    vertical-align: top;
+    height: 10em;
+}
+
+textarea:focus {
+    border-color: #000;
+}
+
+h1 {
+    font: 3em helvetica, sans-serif;
+}
+
+h2 {
+    margin-left: 10px;
+    font: 2em helvetica, sans-serif;
+}
+
+h3 {
+    font: 1em helvetica, sans-serif;
+}
+
+a {
+    margin-right: 10px;
+    font: 1em arial, helvetica, sans-serif;
+    color: white;
+}
+
+header {
+    background-color: #191553;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.blanco-negro {
+    background: #191553;
+    color: white;
+}
+
+footer {
+    background-color: #D9D9D9;
+}
+
+nav {
+    margin-left: 100px;
+}
+
+.Titulo {
+    margin-right: 50px;
+}
+
+.contenedor {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    align-items: center;
+    display: flex;
+    place-content: space-between;
+}
+
+.cont-footer {
+    padding-top: 20px;
+    display: flex;
+    place-content: space-between;
+}
+
+.redes {
+    margin-right: 50px;
+}
+
+.info {
+    margin-left: 50px;
+}
+
+.parrafo {
+    display: flex;
+    padding-top: 20px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.grillaProductos {
+    text-align: center;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    place-content: space-between;
+}
+
+.card-img-top {
+    height: 60%;
+}
+
+.card-title {
+    height: 50%;
+}
