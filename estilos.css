@@ -88,16 +88,21 @@ nav {
 
 .grillaProductos {
     text-align: center;
+    max-width: 1600px;
     display: flex;
-    margin-left: 50px;
-    margin-right: 50px;
-    place-content: space-between;
+    margin: 0 auto;
 }
 
 .card-img-top {
-    height: 60%;
+    height: 45%;
 }
 
 .card-title {
     height: 50%;
+}
+
+.row {
+    margin: 0, auto;
+    column-gap: 15px;
+    justify-content: center
 }
