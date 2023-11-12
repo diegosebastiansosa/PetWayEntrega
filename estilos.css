@@ -84,6 +84,8 @@ nav {
     text-align: center;
     margin-left: 10%;
     margin-right: 10%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .grillaProductos {
@@ -105,4 +107,8 @@ nav {
     margin: 0, auto;
     column-gap: 15px;
     justify-content: center
+}
+
+#img-qs {
+    max-width: 600px;
 }
