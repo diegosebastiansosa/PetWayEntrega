@@ -1,4 +1,4 @@
-const backendPath = 'http://localhost:5000';
+const backendPath = 'http://localhost:5001';
 
 function SendQuestion(){
     document.getElementById('form-response').textContent = '';
@@ -29,13 +29,12 @@ function SendQuestion(){
         };
         console.log("Nombre: " + nombre + " Apellido: " + apellido + " Mail: " + mail + " Edad: " + edad + " Tipo: " + tipo + " Nombre Mascota: " + nom_mascota + " Consulta: " + consulta);
 
-        fetch(backendPath + '/api/question', {
+        fetch(backendPath + '/question/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data),
-            mode: 'no-cors'
+            body: JSON.stringify(data)
         })
         .then(response => response.json())
         .then(result => {
