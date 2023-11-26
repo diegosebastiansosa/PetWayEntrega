@@ -1,0 +1,48 @@
+<main>
+    <br>
+    <h1 align="center">Contacto</h1>
+    <br>
+    <h3 align="center">Escriba su consulta en el siguiente formulario. <br> Nos pondremos en contacto en breve :)</h3>
+    <br>
+    <div class="contenedorFormulario" align="center">
+        <form name="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" maxlength="30" placeholder="Nombre">
+            <div id="nombre-error" class="error-message"></div>
+            <br><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" maxlength="30" placeholder="Apellido">
+            <div id="apellido-error" class="error-message"></div>
+            <br><br>
+            <label for="mail">E-mail:</label>
+            <input type="text" name="mail" id="mail" placeholder="Correo Electrónico">
+            <div id="mail-error" class="error-message"></div>
+            <br><br>
+            <label for="edad">Edad:</label>
+            <input type="text" name="edad" size="3" maxlength="2" id="edad" placeholder="Edad">
+            <div id="edad-error" class="error-message"></div>
+            <br><br>
+            <label>Mascota:</label>
+            <input type="radio" name="pet" value="1"> Perro
+            <input type="radio" name="pet" value="2"> Gato
+            <input type="radio" name="pet" value="3"> Otro
+            <div id="tipo-error" class="error-message"></div>
+            <br><br>
+            <label for="nombreMascota">Nombre de su Mascota:</label>
+            <input type="text" name="nombreMascota" id="nombreMascota" maxlength="20"
+                placeholder="Nombre de su mascota">
+            <div id="mascota-error" class="error-message"></div>
+            <br><br>
+            <label for="consulta">Consulta:</label>
+            <textarea vertical-align="top" type="text" name="consulta" id="consulta" maxlength="500"
+                placeholder="Escriba aquí su consulta"></textarea>
+            <div id="consulta-error" class="error-message"></div>
+            <br><br>
+            <input type="button" id="Enviar" value="Enviar" onclick="SendQuestion()">
+        </form>
+        <br>
+        <div id="form-response" class="success-message"></div>
+    </div>
+    <br>
+    <br>
+</main>
