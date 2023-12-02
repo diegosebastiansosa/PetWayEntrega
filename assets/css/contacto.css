@@ -1,0 +1,42 @@
+.contenedorFormulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px; /* Ajusta según sea necesario */
+}
+
+.columna-izquierda {
+    flex: 1;
+    padding-right: 20px; /* Espacio entre las dos columnas */
+}
+
+.columna-derecha {
+    flex: 1;
+}
+
+.campo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px; /* Espacio entre los campos */
+}
+
+label {
+    width: 150px; /* Ajusta según sea necesario */
+    margin-right: 10px; /* Espacio entre el label y el campo */
+}
+
+input,
+textarea {
+    flex: 1;
+}
+
+.botones {
+    margin-top: 20px; /* Espacio entre los campos y los botones */
+}
