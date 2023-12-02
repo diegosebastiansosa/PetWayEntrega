@@ -1,3 +1,2 @@
-// config.js
-export const backendPath = 'http://localhost:5000';
-// Puedes agregar más variables globales según tus necesidades
+// Configuracion global AQUI
+const backendPathGeneric = "http://localhost:5001";
