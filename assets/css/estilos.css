@@ -88,13 +88,6 @@ nav {
     margin: 0 auto;
 }
 
-.grillaProductos {
-    text-align: center;
-    max-width: 1600px;
-    display: flex;
-    margin: 0 auto;
-}
-
 .card-img-top {
     height: 45%;
 }
@@ -103,9 +96,22 @@ nav {
     height: 50%;
 }
 
+.grillaProductos {
+    text-align: center;
+    max-width: 1600px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.grillaProductosAdmin {
+    text-align: center;
+    max-width: 1600px;
+
+    margin: 0 auto;
+}
+
 .row {
     margin: 0, auto;
-    column-gap: 15px;
     justify-content: center
 }
 
