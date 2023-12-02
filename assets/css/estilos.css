@@ -13,7 +13,10 @@ textarea:focus {
 }
 
 h1 {
-    font: 3em helvetica, sans-serif;
+    font-family: 'Anton', sans-serif;
+    text-shadow: 2px 2px 4px #3A4D39;
+    color: #B0926A;
+    
 }
 
 h2 {
@@ -113,3 +116,4 @@ nav {
 #img-qs {
     max-width: 600px;
 }
+
