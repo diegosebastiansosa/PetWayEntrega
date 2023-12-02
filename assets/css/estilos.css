@@ -112,3 +112,9 @@ nav {
 #img-qs {
     max-width: 600px;
 }
+
+.contenedorForm {
+    margin: 0, auto;
+    text-align: left;
+    padding-left: 50px;
+}
