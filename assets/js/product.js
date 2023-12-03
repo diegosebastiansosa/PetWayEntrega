@@ -103,6 +103,57 @@ function ListProducts(search = null) {
         });
 }
 
+function ListProductsWithPhoto() {
+    const spinner = document.getElementById("spinner");
+
+    var url =backendPathGeneric + '/product';
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const sellRoom = document.getElementById("productSellRoom");
+            if (Array.isArray(data.products)) {
+                sellRoom.innerHTML = "";
+                let cardsInRow = 0;
+                data.products.forEach(producto => {
+                    if (cardsInRow === 4) {
+                        sellRoom.appendChild(document.createElement('br'));
+                        cardsInRow = 0;
+                    }
+                    const card = document.createElement("div");
+                    card.className = "card";
+                    card.style.width = "18rem";
+                    const imageSrc = producto.image ? `data:image/png;base64,${producto.image}` : '/assets/img/not_available.png';
+
+                    card.innerHTML = `
+                        <h5 class="card-header">${producto.name}</h5>
+                        <br>
+                        <img src="${imageSrc}" class="card-img-top" alt="${producto.name}">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">${producto.description}</h6>
+                            <p class="card-text">${producto.price.toLocaleString('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 2 })}</p>
+                        </div>
+                        <div class="card-footer text-muted"><a href="#" class="btn btn-primary">Comprar</a></div>`;
+
+                    sellRoom.appendChild(card);
+
+                    cardsInRow++;
+                });
+            } else {
+                sellRoom.innerHTML = `<div>No se encontraron productos.</div>`;
+            }
+        })
+        .catch(error => {
+            console.error("Error al obtener productos:", error)
+        })
+        .finally(() => {
+            // Oculta el spinner después de cargar los productos
+            spinner.style.display = "none";
+        });
+}
+
+
+
 async function GetProduct(product_id) {
     var url = backendPathGeneric + `/product/${product_id}`;
     const requestOptions = {
@@ -259,4 +310,5 @@ function DeleteProduct(product_id) {
 document.addEventListener("DOMContentLoaded", function () {
     searchProduct();
     uploadUnitOptions();
+    ListProductsWithPhoto();
 });
