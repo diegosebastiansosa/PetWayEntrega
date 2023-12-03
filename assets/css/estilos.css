@@ -13,7 +13,10 @@ textarea:focus {
 }
 
 h1 {
-    font: 3em helvetica, sans-serif;
+    font-family: 'Anton', sans-serif;
+    text-shadow: 2px 2px 4px #3A4D39;
+    color: #B0926A;
+    
 }
 
 h2 {
@@ -88,13 +91,6 @@ nav {
     margin: 0 auto;
 }
 
-.grillaProductos {
-    text-align: center;
-    max-width: 1600px;
-    display: flex;
-    margin: 0 auto;
-}
-
 .card-img-top {
     height: 45%;
 }
@@ -103,11 +99,26 @@ nav {
     height: 50%;
 }
 
+.grillaProductos {
+    text-align: center;
+    max-width: 1600px;
+    display: flex;
+    margin: 0 auto;
+    column-gap: 15px;
+}
+
+.grillaProductosAdmin {
+    text-align: center;
+    max-width: 1600px;
+
+    margin: 0 auto;
+}
+
 .row {
     margin: 0, auto;
-    column-gap: 15px;
     justify-content: center
 }
+
 
 #img-qs {
     max-width: 600px;
