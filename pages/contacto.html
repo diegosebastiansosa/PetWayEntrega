@@ -1,0 +1,71 @@
+<main>
+    <br>
+    <h1 align="center">Contacto</h1>
+    <br>
+    <div class="flex-container" style="display: flex; justify-content: space-between; align-items: center; text-align: center; margin: auto;">
+        <div class="text-container" style="flex: 1;">
+            <!-- Contenido de texto -->
+            <h4>Escriba su consulta en el siguiente formulario. <br> Nos pondremos en contacto en breve :)</h4>
+        </div>
+        <div class="image-container" style="flex: 1;">
+            <!-- Contenido de imagen -->
+            <img src="/assets/img/contacto.png" width="50%" id="img-qs">
+        </div>
+    </div>
+    <br>
+    <div class="contenedorFormulario" align="center">
+        <form name="formulario" class="formulario-flex">
+            <div class="columna-izquierda">
+                <!-- Campos de la primera columna -->
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" maxlength="30" placeholder="Nombre">
+                    <div id="nombre-error" class="error-message"></div>
+                </div>
+                <div class="campo">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido" maxlength="30" placeholder="Apellido">
+                    <div id="apellido-error" class="error-message"></div>
+                </div>
+                <div class="campo">
+                    <label for="mail">E-mail:</label>
+                    <input type="text" name="mail" id="mail" placeholder="Correo Electrónico">
+                    <div id="mail-error" class="error-message"></div>
+                </div>
+                <div class="campo">
+                    <label for="edad">Edad:</label>
+                    <input type="text" name="edad" size="3" maxlength="2" id="edad" placeholder="Edad">
+                    <div id="edad-error" class="error-message"></div>
+                </div>
+                <div class="campo">
+                    <label for="tipoMascota">Tipo de Mascota:</label>
+                    <select name="tipoMascota" id="tipoMascota" style="width: 54%;"></select>
+                    <div id="tipoMascota-error" class="error-message"></div>
+                </div>
+                
+                <div class="campo">
+                    <label for="nombreMascota">Nombre de su Mascota:</label>
+                    <input type="text" name="nombreMascota" id="nombreMascota" maxlength="20" placeholder="Nombre de su mascota">
+                    <div id="mascota-error" class="error-message"></div>
+                </div>
+                <!-- Repite esta estructura para cada campo -->
+            </div>
+    
+            <div class="columna-derecha">
+                <!-- Caja para escribir el comentario -->
+                <div class="campo">
+                    <label for="consulta">Consulta:</label>
+                    <textarea type="text" name="consulta" id="consulta" maxlength="500" placeholder="Escriba aquí su consulta"></textarea>
+                    <div id="consulta-error" class="error-message"></div>
+                </div>
+            </div>
+        </form>
+        <div class="botones">
+            <!-- Botones de envío -->
+            <input class="btn btn-success" type="button" id="Enviar" value="Enviar" onclick="SendQuestion()">
+        </div>
+        <div id="form-response" class="success-message"></div>
+    </div>
+    <br>
+    <br>
+</main>

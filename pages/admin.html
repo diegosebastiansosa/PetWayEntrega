@@ -1,0 +1,116 @@
+<main>
+    <br>
+    <div class="grillaProductosAdmin">
+        <div class="row gy-3">
+            <div class="col-md-6">
+                <label for="search">Buscar:</label>
+                <input type="text" id="searchInput" name="searchInput" onkeyup="if(event.keyCode === 13) searchProduct()" required>
+                <button class="btn btn-primary" onclick="searchProduct()"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-success" onclick="openProductModal(true)"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</button>
+            </div>
+
+        </div>
+
+        <div class="row gy-3">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <!-- Encabezado de la tabla -->
+                    <thead>
+                        <tr>
+                            <th hidden="True" align="center">#</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th align="right">Cantidad</th>
+                            <th align="left">Unidad</th>
+                            <th align="right">Precio</th>
+                            <th align="center"></th>
+                        </tr>
+                    </thead>
+                    <!-- Cuerpo de la tabla, sino existen datos se muestra el mensaje de que no se encontraron productos-->
+                    <tbody id="cuerpoTablaProductos">
+                        <tr><td colspan="7" align="center">No se encontraron productos.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Modal confirmacion de Eliminacion -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar este producto?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmarEliminacionBtn">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Crear Producto -->
+    <div class="modal fade" id="crearProductoModal" tabindex="-1" aria-labelledby="crearProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="crearProductoModalLabel">Crear Nuevo Producto</h5>
+                    <label hidden id="product_id">0</label>
+                    <label hidden id="photo_name"></label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para crear un nuevo producto -->
+                    <form id="ProductFormModal" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descripcion">Descripción:</label>
+                                    <textarea class="form-control" id="descripcion" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cantidad">Cantidad:</label>
+                                    <input type="number" class="form-control" id="cantidad" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="foto">Foto:</label>
+                                    <input type="file" class="form-control" id="foto" accept="image/jpeg, image/jpg, image/png, image/gif, image/webp" onchange="previewImage()">
+                                    <img id="previewFoto" src="/assets/img/not_available.png" alt="Foto Preview" style="max-width: 100%; height: auto;">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="precio">Precio:</label>
+                                    <input type="number" class="form-control" id="precio" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="unidad">Unidad:</label>
+                                    <select class="form-control" id="unidad" required></select>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btnCreate" type="submit" class="btn btn-primary" onclick="CreateProduct()">Crear Producto</button>
+                        <button id="btnUpdate" type="submit" class="btn btn-warning" onclick="UpdateProduct()">Modificar Producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
