@@ -10,15 +10,6 @@ function SendQuestion() {
 
   limpiar_errores();
 
-  console.log(nombre);
-  console.log(apellido);
-  console.log(mail);
-  console.log(edad);
-  console.log(tipo);
-  console.log(nom_mascota);
-  console.log(consulta);
-
-
   if (
     validar(nombre, "nombre-error") &&
     validar(apellido, "apellido-error") &&
@@ -39,22 +30,6 @@ function SendQuestion() {
       pet_name: nom_mascota,
       question: consulta,
     };
-    console.log(
-      "Nombre: " +
-        nombre +
-        " Apellido: " +
-        apellido +
-        " Mail: " +
-        mail +
-        " Edad: " +
-        edad +
-        " Tipo: " +
-        tipo +
-        " Nombre Mascota: " +
-        nom_mascota +
-        " Consulta: " +
-        consulta
-    );
 
     fetch(backendPathGeneric + "/question/create", {
       method: "POST",
@@ -67,7 +42,6 @@ function SendQuestion() {
       .then((result) => {
         document.getElementById("form-response").textContent =
           "Su consulta ha sido enviada";
-        console.log(result);
         limpiar_errores();
         limpiar_campos();
       })

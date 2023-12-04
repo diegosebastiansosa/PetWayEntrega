@@ -13,7 +13,6 @@ async function openProductModal(isCreate = true, product_id = 0) {
         document.getElementById('btnUpdate').style.display = 'block';
         const product = await GetProduct(product_id);
         if (product) {
-            console.log(product)
             UploadForm(product);
 
         } else {
@@ -104,10 +103,7 @@ function ListProducts(search = null) {
 }
 
 function ListProductsWithPhoto() {
-    const spinner = document.getElementById("spinner");
-
     var url =backendPathGeneric + '/product';
-
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -145,10 +141,6 @@ function ListProductsWithPhoto() {
         })
         .catch(error => {
             console.error("Error al obtener productos:", error)
-        })
-        .finally(() => {
-            // Oculta el spinner después de cargar los productos
-            spinner.style.display = "none";
         });
 }
 
